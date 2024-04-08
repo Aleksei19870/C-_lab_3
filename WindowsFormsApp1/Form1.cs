@@ -19,27 +19,64 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            double value1 = double.Parse(this.textBox1.Text);
+            string scale1 = this.textBox2.Text;
+            string scale2 = this.textBox2.Text;
+            double value2 = double.Parse(this.textBox3.Text);
 
+            Temperature temp1 = new Temperature(value1, scale1);
+            Temperature temp2 = new Temperature(value2, scale2);
+
+            Temperature resultSum = temp1 + temp2;
+            MessageBox.Show("Сумма температур: " + resultSum);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            double value1 = double.Parse(this.textBox1.Text);
+            string scale1 = this.textBox2.Text;
+            string scale2 = this.textBox2.Text;
+            double value2 = double.Parse(this.textBox3.Text);
+
+            Temperature temp1 = new Temperature(value1, scale1);
+            Temperature temp2 = new Temperature(value2, scale2);
+
+            Temperature resultSub = temp1 - temp2;
+            MessageBox.Show("Разница температур: " + resultSub);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double value1 = double.Parse(this.textBox1.Text);
+            string scale1 = this.textBox2.Text;
+            string scale2 = this.textBox2.Text;
+            double value2 = double.Parse(this.textBox3.Text);
+
+            Temperature temp1 = new Temperature(value1, scale1);
+            Temperature temp2 = new Temperature(value2, scale2);
+
+            Temperature resultMul = temp1 * temp2;
+            MessageBox.Show("Результат умножения температур: " + resultMul);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            double value1 = double.Parse(this.textBox1.Text);
+            string scale1 = this.textBox2.Text;
+            string scale2 = this.textBox2.Text;
+            double value2 = double.Parse(this.textBox3.Text);
+
+            Temperature temp1 = new Temperature(value1, scale1);
+            Temperature temp2 = new Temperature(value2, scale2);
+
+            Temperature resultDiv = temp1 / temp2;
+            MessageBox.Show("Результат деления температур: " + resultDiv);
         }
     }
 
-    public class Logic // класс где будем хранить логику
-    {
-        public static string Compare(int с_1, string tc_1, int c_2, string tc_2)
-        {
-            
-            return "a";
-        }
 
-        public static int GetAverage(int ivanovSum, int petrovSum)
-        {
-            var averageSum = (petrovSum + ivanovSum) / 2;
-            return averageSum;
-        }
-    }
 
-    
-        public class Temperature
+    public class Temperature
         {
             private double celsius;
 
