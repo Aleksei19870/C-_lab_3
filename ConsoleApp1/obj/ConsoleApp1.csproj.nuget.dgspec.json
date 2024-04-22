@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "E:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "F:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "E:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "E:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "F:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\ConsoleApp1.csproj",
-        "packagesPath": "C:\\Users\\banan\\.nuget\\packages\\",
-        "outputPath": "F:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\obj\\",
+        "projectPath": "E:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\ConsoleApp1.csproj",
+        "packagesPath": "C:\\Users\\stud\\.nuget\\packages\\",
+        "outputPath": "E:\\3 semestr\\C#\\Lab_3\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "E:\\studio3\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\banan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\stud\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,8 +45,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -59,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

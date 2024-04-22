@@ -17,118 +17,94 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        private MeasureType GetMeasureType(ComboBox comboBox)
+        {
+            MeasureType measureType;
+            switch (comboBox.Text)
+            {
+                case "C":
+                    measureType = MeasureType.C;
+                    break;
+                case "F":
+                    measureType = MeasureType.F;
+                    break;
+                case "R":
+                    measureType = MeasureType.R;
+                    break;
+                case "K":
+                    measureType = MeasureType.K;
+                    break;
+                default:
+                    measureType = MeasureType.C;
+                    break;
+            }
+            return measureType;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             double value1 = double.Parse(this.textBox1.Text);
-            string scale1 = this.textBox2.Text;
-            string scale2 = this.textBox2.Text;
+            MeasureType scale1 = GetMeasureType(comboBox1);
+            MeasureType scale2 = GetMeasureType(comboBox2);
+            MeasureType scale3 = GetMeasureType(comboBox3);
             double value2 = double.Parse(this.textBox3.Text);
 
             Temperature temp1 = new Temperature(value1, scale1);
             Temperature temp2 = new Temperature(value2, scale2);
-
             Temperature resultSum = temp1 + temp2;
-            MessageBox.Show("Сумма температур: " + resultSum);
+            resultSum = resultSum.To(scale3);
+            string v = resultSum.Verbose();
+            MessageBox.Show("Сумма температур: " + v);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             double value1 = double.Parse(this.textBox1.Text);
-            string scale1 = this.textBox2.Text;
-            string scale2 = this.textBox2.Text;
+            MeasureType scale1 = GetMeasureType(comboBox1);
+            MeasureType scale2 = GetMeasureType(comboBox2);
+            MeasureType scale3 = GetMeasureType(comboBox3);
             double value2 = double.Parse(this.textBox3.Text);
 
             Temperature temp1 = new Temperature(value1, scale1);
-            Temperature temp2 = new Temperature(value2, scale2);
-
+            Temperature temp2 = new Temperature(value2, scale2);       
             Temperature resultSub = temp1 - temp2;
-            MessageBox.Show("Разница температур: " + resultSub);
+            resultSub = resultSub.To(scale3);
+            string v = resultSub.Verbose();
+            MessageBox.Show("Разница температур: " + v);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             double value1 = double.Parse(this.textBox1.Text);
-            string scale1 = this.textBox2.Text;
-            string scale2 = this.textBox2.Text;
+            MeasureType scale1 = GetMeasureType(comboBox1);
+            MeasureType scale2 = GetMeasureType(comboBox2);
+            MeasureType scale3 = GetMeasureType(comboBox3);
             double value2 = double.Parse(this.textBox3.Text);
 
             Temperature temp1 = new Temperature(value1, scale1);
             Temperature temp2 = new Temperature(value2, scale2);
-
             Temperature resultMul = temp1 * temp2;
-            MessageBox.Show("Результат умножения температур: " + resultMul);
+            resultMul = resultMul.To(scale3);
+            string v = resultMul.Verbose();
+            MessageBox.Show("Результат умножения температур: " + v );
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             double value1 = double.Parse(this.textBox1.Text);
-            string scale1 = this.textBox2.Text;
-            string scale2 = this.textBox2.Text;
+            MeasureType scale1 = GetMeasureType(comboBox1);
+            MeasureType scale2 = GetMeasureType(comboBox2);
+            MeasureType scale3 = GetMeasureType(comboBox3);
             double value2 = double.Parse(this.textBox3.Text);
 
             Temperature temp1 = new Temperature(value1, scale1);
             Temperature temp2 = new Temperature(value2, scale2);
 
             Temperature resultDiv = temp1 / temp2;
-            MessageBox.Show("Результат деления температур: " + resultDiv);
+            resultDiv = resultDiv.To(scale3);
+            string v = resultDiv.Verbose();
+            MessageBox.Show("Результат деления температур: " + v);
+
         }
-    }
-
-
-
-    public class Temperature
-        {
-            private double celsius;
-
-            public Temperature(double value, string scale)
-            {
-                switch (scale.ToLower())
-                {
-                    case "c":
-                        this.celsius = value;
-                        break;
-                    case "f":
-                        this.celsius = (value - 32) * 5 / 9;
-                        break;
-                    case "r":
-                        this.celsius = (value - 491.67) * 5 / 9;
-                        break;
-                    case "k":
-                        this.celsius = value - 273.15;
-                        break;
-                    default:
-                        throw new ArgumentException("Invalid temperature scale.");
-                }
-            }
-
-            public static Temperature operator +(Temperature t1, Temperature t2)
-            {
-                return new Temperature(t1.celsius + t2.celsius, "c");
-            }
-
-            public static Temperature operator -(Temperature t1, Temperature t2)
-            {
-                return new Temperature(t1.celsius - t2.celsius, "c");
-            }
-
-            public static Temperature operator *(Temperature t1, Temperature t2)
-            {
-                return new Temperature(t1.celsius * t2.celsius, "c");
-            }
-
-            public static Temperature operator /(Temperature t1, Temperature t2)
-            {
-                if (t2.celsius == 0)
-                {
-                    throw new DivideByZeroException("Error: Division by zero!");
-                }
-                return new Temperature(t1.celsius / t2.celsius, "c");
-            }
-
-            public override string ToString()
-            {
-                return celsius + "°C";
-            }
-        }
-    
+    }   
 }
